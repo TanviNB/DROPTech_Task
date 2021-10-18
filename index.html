@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Coffee Express</title>
+</head>
+<body>
+    <div id="preloader"></div>
+    <section>
+        <nav id="navbar">
+            <div id="logo">
+                <img src="logo1.png" alt="Coffee">
+            </div>
+    
+            <ul>
+                <li class="item"><a href="blogg.html">Home</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1> <span id="words" > Cappuccino </span></h1>
+            <p> <span id="text"> Espresso-based coffee drink that originated in Italy, and is prepared with steamed milk foam</span></p>
+            <div class="go"><span id="btntext">Go</span></div>
+        </div>
+        <!-- <h2>Random</h2> -->
+        <div class="box">
+            <div class="loading">
+                <span></span>
+                <p id="countdown">10 H 00</p>
+            <div class="clock">
+                <div class="seconds">
+                    <div class="second" id="second"></div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <script type="text/javascript">
+        function changeBg(){
+
+            const images = [
+                'url("img1.jpg")',
+                'url("bg2.jpg")',
+                'url("bg3.jpg")',
+                'url("bg4.jpg")',
+                'url("bg5.jpg")',
+            ]
+
+            const section = document.querySelector('section')
+
+            const bg = images[Math.floor(Math.random() *
+            images.length)];
+            section.style.backgroundImage = bg;
+        }
+
+        setInterval(changeBg, 5000)
+
+    </script>
+    <script>
+        (function(){
+            var words = [
+                "Cappucino", 
+                "Espresso", 
+                "Latte",
+                "Americano",
+                "Caffe Mocha",
+            ],
+            i = 0;
+            setInterval(function(){
+                $('#words').fadeOut(function(){
+                    $(this).html(words[(i= (i+1) % words.length)]).fadeIn();
+                });
+            }, 5000)
+        })();
+    </script>
+    <script>
+        (function(){
+            var text = [
+                "Espresso-based coffee drink that originated in Italy, and is prepared with steamed milk foam", 
+                "Espresso is a coffee-brewing method of Italian origin.", 
+                "Is a coffee drink of Italian origin made with espresso and steamed milk",
+                "Caffè Americano is a type of coffee drink prepared by diluting an espresso with hot water",
+                "A caffè mocha, also called mocaccino, is a chocolate-flavoured warm beverage",
+            ],
+            i = 0;
+            setInterval(function(){
+                $('#text').fadeOut(function(){
+                    $(this).html(text[(i= (i+1) % text.length)]).fadeIn();
+                });
+            }, 5000)
+        })();
+    </script>
+    <script>
+        (function(){
+            var btntext = [
+                "Go", 
+                "Go", 
+                "Go",
+                "Go",
+                "Go",
+            ],
+            i = 0;
+            setInterval(function(){
+                $('#btntext').fadeOut(function(){
+                    $(this).html(btntext[(i= (i+1) % btntext.length)]).fadeIn();
+                });
+            }, 5000)
+        })();
+    </script>
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        })
+    </script>
+</body>
+</html>
